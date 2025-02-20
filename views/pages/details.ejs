@@ -5,26 +5,40 @@
     <%- include("../partials/header") %>
 </head>
 
-<body class="bg-gray-100 text-gray-800">
-    <div class="container mx-auto p-5">
-        <h1 class="text-3xl font-bold text-center mb-5 capitalize">
-            <%= pokemon.name %>
-        </h1>
-        <div class="flex flex-col items-center">
-            <img src="<%= pokemon.sprites.front_default %>" alt="<%= pokemon.name %>" class="w-40 h-40" />
-            <p class="text-lg font-semibold">Height: <%= pokemon.height %>
-            </p>
-            <p class="text-lg font-semibold">Weight: <%= pokemon.weight %>
-            </p>
-            <p class="text-lg font-semibold">
-                Type: <%= pokemon.types.map(t=> t.type.name).join(', ') %>
-            </p>
+<body
+    class="flex flex-col items-center justify-center min-h-screen bg-gradient-to-b from-blue-400 to-green-400 text-gray-800">
+    <div class="relative p-6 mt-8 text-center bg-red-500 rounded-lg shadow-lg border-4 border-gray-800 w-80">
+        <div class="relative bg-gray-100 p-4 border-2 border-gray-400"
+            style="clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 10% 100%, 0% 90%);">
+            <div class="absolute top-2 left-2 flex space-x-2">
+                <div class="w-3 h-3 bg-red-400 rounded-full"></div>
+                <div class="w-3 h-3 bg-yellow-400 rounded-full"></div>
+                <div class="w-3 h-3 bg-green-400 rounded-full"></div>
+            </div>
+            <div class="flex flex-col items-center">
+                <img src="<%= pokemon.sprites.front_default %>" alt="<%= pokemon.name %>" class="h-32 md:h-40">
+                <h1 class="font-semibold text-gray-700 text-lg md:text-2xl mt-2">
+                    <span class="text-gray-600">#<%= pokemon.id %></span> -
+                    <span class="pokemon__name capitalize font-bold text-gray-800">
+                        <%= pokemon.name %>
+                    </span>
+                </h1>
+            </div>
         </div>
-        <div class="text-center mt-5">
-            <a href="/" class="px-4 py-2 bg-blue-500 text-white rounded-lg">Back</a>
+        <div class="mt-4 text-gray-100 text-sm md:text-lg">
+            <p>Height: <%= pokemon.height %>
+            </p>
+            <p>Weight: <%= pokemon.weight %>
+            </p>
+            <p>Type: <%= pokemon.types.map(t=> t.type.name).join(', ') %></p>
+        </div>
+        <div class="mt-4 flex justify-center">
+            <a href="/"
+                class="px-6 py-3 text-white bg-gray-700 border-2 border-black rounded-md shadow-md transform active:shadow-inner active:scale-95">Back</a>
         </div>
     </div>
     <%- include("../partials/footer") %>
 </body>
+
 
 </html>
