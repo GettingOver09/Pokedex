@@ -16,7 +16,7 @@
                 <div class="w-3 h-3 bg-green-400 rounded-full"></div>
             </div>
             <div class="flex flex-col items-center">
-                <img src="<%= pokemon.sprites.front_default %>" alt="<%= pokemon.name %>" class="h-32 md:h-40">
+                <img src="<%= pokemon.sprites.versions['generation-v']['black-white'].animated.front_default %>" alt="<%= pokemon.name %>" class="h-32 md:h-40">
                 <h1 class="font-semibold text-gray-700 text-lg md:text-2xl mt-2">
                     <span class="text-gray-600">#<%= pokemon.id %></span> -
                     <span class="pokemon__name capitalize font-bold text-gray-800">
